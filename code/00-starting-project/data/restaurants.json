@@ -26,5 +26,12 @@
     "cuisine": "Korean",
     "website": "https://honammeet.co.kr/",
     "description": "It's delicious !!"
+  },
+  {
+    "name": "양지골",
+    "address": "선경",
+    "cuisine": "Korean",
+    "website": "https://yangjigol.co.kr/",
+    "description": "It's delicious !!"
   }
 ]
