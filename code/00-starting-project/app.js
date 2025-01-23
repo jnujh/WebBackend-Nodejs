@@ -26,6 +26,12 @@ app.get("/restaurants", function (req, res) {
   });
 });
 
+// :(콜론)을 이용한 동적경로
+app.get("/restaurants/:id", function (req, res) {
+  const restaurantId = req.params.id;
+  res.render("restaurant-detail", { rid: restaurantId });
+});
+
 app.get("/recommend", function (req, res) {
   res.render("recommend");
 });

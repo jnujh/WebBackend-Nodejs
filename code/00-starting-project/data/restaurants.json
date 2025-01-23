@@ -33,5 +33,12 @@
     "cuisine": "Korean",
     "website": "https://yangjigol.co.kr/",
     "description": "It's delicious !!"
+  },
+  {
+    "name": "미평햄버거",
+    "address": "미평",
+    "cuisine": "Korean",
+    "website": "https://mipyeonghamburger.com/",
+    "description": "It's delicious !!"
   }
 ]
