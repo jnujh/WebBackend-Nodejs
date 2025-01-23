@@ -2,6 +2,8 @@ const path = require("path");
 const fs = require("fs");
 
 const express = require("express");
+const uuid = require("uuid");
+
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -29,7 +31,19 @@ app.get("/restaurants", function (req, res) {
 // :(콜론)을 이용한 동적경로
 app.get("/restaurants/:id", function (req, res) {
   const restaurantId = req.params.id;
-  res.render("restaurant-detail", { rid: restaurantId });
+
+  const filePath = path.join(__dirname, "data", "restaurants.json");
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurants = JSON.parse(fileData);
+
+  for (const restaurant of storedRestaurants) {
+    if (restaurant.id === restaurantId) {
+      return res.render("restaurant-detail", {
+        rid: restaurantId,
+        restaurant: restaurant,
+      });
+    }
+  }
 });
 
 app.get("/recommend", function (req, res) {
@@ -38,6 +52,7 @@ app.get("/recommend", function (req, res) {
 
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
+  restaurant.id = uuid.v4();
   const filePath = path.join(__dirname, "data", "restaurants.json");
 
   const fileData = fs.readFileSync(filePath);
