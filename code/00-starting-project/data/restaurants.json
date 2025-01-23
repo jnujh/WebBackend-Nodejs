@@ -22,5 +22,13 @@
     "website": "https://www.google.co.kr/",
     "description": "It's cool !!",
     "id": "46c034c1-4e70-4e7c-bf6e-5ea5ad41527e"
+  },
+  {
+    "name": "자바",
+    "address": "전남대",
+    "cuisine": "Korean",
+    "website": "https://www.java.com/ko/",
+    "description": "It's necessary !!",
+    "id": "51b54712-af04-4cfa-a0ba-136b3dfe557a"
   }
 ]
